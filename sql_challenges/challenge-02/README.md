@@ -1,0 +1,1 @@
+Solve problems from Lesson 6 and 7, and question interview from DataLemur
