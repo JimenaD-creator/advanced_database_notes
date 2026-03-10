@@ -1,0 +1,1 @@
+Complete "Set operators" tutorial in freesql.com
