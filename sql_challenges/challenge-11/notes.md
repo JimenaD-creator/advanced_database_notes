@@ -32,6 +32,23 @@ Comments should also be deleted automatically, that is why we use: task_id = Col
 
 ## Exercise 2: Questions
 
+Migration Creation:
+```
+def upgrade():
+    op.create_table(
+        'comments',
+        sa.Column('id', sa.Integer(), nullable=False),
+        sa.Column('task_id', sa.Integer(), nullable=True),
+        sa.Column('user_id', sa.Integer(), nullable=True),
+        sa.Column('content', sa.String(length=1000), nullable=False),
+        sa.Column('created_at', sa.DateTime(), nullable=True),
+
+        sa.ForeignKeyConstraint(['task_id'], ['tasks.id']),
+        sa.ForeignKeyConstraint(['user_id'], ['users.id']),
+        sa.PrimaryKeyConstraint('id')
+    )
+```
+
 Regenerated Migration:
 
 ```
